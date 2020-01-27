@@ -1,0 +1,39 @@
+
+*{
+  Box-sizing: border-box; //(non-default)
+}
+
+nav{
+  background-color: #4056A1;
+  color: red;
+  position: fixed;
+  top:0;
+  height:120px;
+  /* border: solid; */
+  width: 100%;
+  z-index: 9000;
+  
+}
+
+.logo{
+  padding-left: 1.5em;
+  padding-top: 1.7em;
+  display:block;
+  width: 50%;
+
+
+  font-family: Bungee, sans-serif;
+
+}
+
+/* .create{
+  float: right;
+  padding-left: 1.5em;
+  padding-top: 1.7em;
+  display:block;
+  width: 50%;
+
+
+  font-family: Bungee, sans-serif;
+
+} */
