@@ -1,10 +1,31 @@
+
+
+
 header{
-  height: 400px;
+  height: 280px;
   width: 100%;
-  position: absolute;
+  position: relative;
   flex-direction: column;
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin-top: 120px;
+  margin-top: 100px;
+  padding-top: 15px;
+  /* background-image: url("https://wallpaperplay.com/walls/full/2/3/2/37698.jpg"); */
+  /* background-image: url("/images/banner.png"); */
+
+  background:
+  linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+  linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+  linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+  linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+  linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+  linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+  background-color: #131313;
+  background-size: 20px 20px;
+
+}
+
+h2{
+  margin:0px;
+  color:whitesmoke
 }

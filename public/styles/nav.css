@@ -1,39 +1,31 @@
 
-*{
-  Box-sizing: border-box; //(non-default)
-}
 
-nav{
-  background-color: #4056A1;
-  color: red;
+nav {
+  background-color: #4056a1;
+  color: whitesmoke;
   position: fixed;
-  top:0;
-  height:120px;
-  /* border: solid; */
+  top: 0;
+  height: 100px;
   width: 100%;
   z-index: 9000;
-  
+  display: flex;
 }
 
-.logo{
+.logo {
   padding-left: 1.5em;
-  padding-top: 1.7em;
-  display:block;
+  padding-top: 1.2em;
+  display: block;
   width: 50%;
 
-
   font-family: Bungee, sans-serif;
-
 }
 
-/* .create{
-  float: right;
-  padding-left: 1.5em;
-  padding-top: 1.7em;
-  display:block;
+.create {
+  text-align: right;
+  padding-top: 1.2em;
+  padding-right: 40px;
+  display: block;
   width: 50%;
 
-
   font-family: Bungee, sans-serif;
-
-} */
+}

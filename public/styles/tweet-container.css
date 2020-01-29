@@ -1,0 +1,56 @@
+
+.tweet-container{
+  color:rgb(68, 69, 70);
+  border:solid 4px;
+  width: 90%;
+  margin:auto;
+  margin-top:10px;
+  background-color: #FFE192;
+  padding:5px;
+}
+
+.tweet-container p{
+  border-bottom: solid whitesmoke;
+  margin-top:5px;
+  margin-bottom: 5px;
+}
+
+.postedTweet{
+  border: solid black;
+  padding: 5px;
+  margin-bottom: 10px;
+
+}
+
+.tweet-shadow{
+  box-shadow: 45px 17px 33px 0px rgba(255,242,0,1);
+}
+
+
+.postedTweetHeader{
+display:flex
+}
+
+.username{
+flex:1;
+}
+
+.handle{
+flex:0;
+padding-right:10px;
+}
+
+
+
+
+
+
+/*  
+.tweet-container p{
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.handle{
+float:right;
+} */
