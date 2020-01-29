@@ -6,6 +6,7 @@
 
 $(document).ready(function() {
 
+  //hover effect on tweet container
   $(".tweet-container").hover(
     function() {
       $(this).addClass("tweet-shadow");
@@ -16,23 +17,36 @@ $(document).ready(function() {
   );
 
 
+  //when click on submit box
   $(".submitBox").on('submit', function(e){
     
     e.preventDefault()
-    console.log($(this).serialize())
-    
-    /////
+
+    if($(this).serialize()==='text='){
+      $('.notext').addClass('notextShow')
+    } else if($(this).serialize().length>145){
+      $('.text2long').addClass('text2longShow')
+    }
+    else{
+      $('.notext').removeClass('notextShow')
       $.ajax({
         url:`/tweets`,
         type: 'POST',
         data: $(this).serialize()  //the data in the tweet fourm.
       })
       .then(response => {
+        $(".submitBox").trigger('reset');  //clears the msg box 
         loadtweets()
       })
-    ////
-      
+    }
+  
+  })
 
+  //toggle nav bar button
+  $(".toggleTweet").on('click', function(e){
+
+    $( ".new-tweet" ).slideToggle('slow');
+        
   })
 
 
@@ -49,7 +63,7 @@ function createTweetElement(tweetObj) {
       <span class="username"><strong>${tweetObj.user.name}</strong></span>   
       <span class="handle"><strong>${tweetObj.user.handle}</strong></span>
     </div>
-    <p>${tweetObj.content.text}</p>
+    <p>${escapeTxt(tweetObj.content.text)}</p>
     <footer>${new Date(tweetObj.created_at)}</footer>
   </article>
   `;
@@ -57,6 +71,7 @@ function createTweetElement(tweetObj) {
 }
 
 function renderTweets(tweetArr) {
+  $('.tweet-container').empty()
   tweetArr.forEach(element => {
     $(".tweet-container").prepend(createTweetElement(element));
   });
@@ -82,4 +97,10 @@ function convertDate(longDate) {
   console.log(datetime);
 
   return datetime;
+}
+
+const escapeTxt =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
 }

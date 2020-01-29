@@ -9,6 +9,10 @@
   padding:5px;
 }
 
+
+
+
+
 .tweet-container p{
   border-bottom: solid whitesmoke;
   margin-top:5px;
@@ -40,8 +44,20 @@ flex:0;
 padding-right:10px;
 }
 
+.notext{
+  opacity: 0;
+}
 
+.notextShow{
+  opacity: 1;
+}
 
+.text2long{
+  opacity: 0;
+}
+.text2longShow{
+  opacity: 1;
+}
 
 
 

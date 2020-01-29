@@ -39,7 +39,7 @@
     <nav>
       
       <span class="logo">tweeterss</span>
-      <span class="create">Tweet a new tweet!</span>
+      <span class="create"><button class='toggleTweet'><strong>Tweet !</strong></button></span>
 
     </nav>
   
@@ -62,8 +62,13 @@
         <form action="/tweets" method="POST" class='submitBox'>
           <textarea class="text-box" name="text" placeholder="What are you humming about?"></textarea>
           <br>
-          <button type="submit" class="btn"><strong>Tweet !</strong></button>          
+          <div class='bottom bar'>
+          <button type="submit" class="btn"><strong>Tweet !</strong></button>   
+          <span class='notext'>Enter a Tweet!</span>  
+          <span class='text2long'>Tweet Too Long!</span>       
+     
           <p class="counter">140</p>
+         </div>
         </form>
       </section>
     </main>

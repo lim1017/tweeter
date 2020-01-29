@@ -27,5 +27,14 @@ nav {
   display: block;
   width: 50%;
 
+
+
+
   font-family: Bungee, sans-serif;
+}
+
+
+.toggleTweet{
+  cursor: pointer;
+
 }

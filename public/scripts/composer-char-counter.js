@@ -9,8 +9,12 @@ $(document).ready(function() {
 
     if(counter < 0){
       $('.counter').addClass('text2Long')
+      $('.text2long').addClass('text2longShow')
+
     }else{
       $('.counter').removeClass('text2Long')
+      $('.text2long').removeClass('text2longShow')
+
     }
 
 
