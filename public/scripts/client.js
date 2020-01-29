@@ -19,19 +19,16 @@ $(document).ready(function() {
   $(".submitBox").on('submit', function(e){
     
     e.preventDefault()
-    // console.log(this.val())
-    // console.log( $(this).serialize() );
-
+    console.log($(this).serialize())
+    
     /////
       $.ajax({
         url:`/tweets`,
         type: 'POST',
-        data: $(this).serialize()
+        data: $(this).serialize()  //the data in the tweet fourm.
       })
       .then(response => {
-
-        console.log('then after request')
-
+        loadtweets()
       })
     ////
       
@@ -39,7 +36,6 @@ $(document).ready(function() {
   })
 
 
-  renderTweets(defaultTweets);
 });
 
 
@@ -62,8 +58,20 @@ function createTweetElement(tweetObj) {
 
 function renderTweets(tweetArr) {
   tweetArr.forEach(element => {
-    $(".tweet-container").append(createTweetElement(element));
+    $(".tweet-container").prepend(createTweetElement(element));
   });
+}
+
+
+function loadtweets(){
+  $.ajax({
+    url:`/tweets`,
+    type: "GET",
+    
+  }).then(response => {
+    renderTweets(response)
+  })
+    
 }
 
 function convertDate(longDate) {
@@ -75,40 +83,3 @@ function convertDate(longDate) {
 
   return datetime;
 }
-
-let defaultTweets = [
-  {
-    user: {
-      name: "Newton",
-      avatars: "https://i.imgur.com/73hZDYK.png",
-      handle: "@SirIsaac"
-    },
-    content: {
-      text:
-        "If I have seen further it is by standing on the shoulders of giants"
-    },
-    created_at: 1461116232227
-  },
-  {
-    user: {
-      name: "Descartes",
-      avatars: "https://i.imgur.com/nlhLi3I.png",
-      handle: "@rd"
-    },
-    content: {
-      text: "Je pense , donc je suis"
-    },
-    created_at: 1461113959088
-  },
-  {
-    user: {
-      name: "SuperBob",
-      avatars: "https://i.imgur.com/nlhLi3I.png",
-      handle: "@Bob"
-    },
-    content: {
-      text: "I am Bob"
-    },
-    created_at: 1461113959088
-  }
-];
