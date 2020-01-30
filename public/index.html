@@ -20,17 +20,17 @@
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweet-container.css" type="text/css" />
 
-
-    
-
-
-
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+    <!-- viewport -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
 
   </head>
 
@@ -43,7 +43,7 @@
 
     </nav>
   
-  
+    <div class='wholePage'>
     <header>
       <div>
           <img src="/images/profile-hex.png" width="200" height="200" alt="Computer Hope"> 
@@ -56,6 +56,7 @@
       <button class="back2Top" title="Back to top" href="#">UP</button>
 
     <!-- Page-specific (main) content here -->
+    <div class='newTweetPostedTweet'>
     <main class="container">
 
       <section class="new-tweet">
@@ -68,17 +69,17 @@
           <span class='notext'>Enter a Tweet!</span>  
           <span class='text2long'>Tweet Too Long!</span>       
      
-          <p class="counter">140</p>
+          <span class="counter">140</span>
          </div>
         </form>
       </section>
     </main>
 
     <section class='tweet-container'>
-     
       <!-- tweets go here -->
-
+      
     </section>
-
+  </div>
+  </div>
   </body>
 </html>

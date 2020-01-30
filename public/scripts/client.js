@@ -6,6 +6,8 @@
 
 $(document).ready(function() {
 
+  loadtweets()
+
   //hover effect on tweet container
   $(".tweet-container").hover(
     function() {
@@ -80,7 +82,8 @@ function createTweetElement(tweetObj) {
       <span class="handle"><strong>${tweetObj.user.handle}</strong></span>
     </div>
     <p>${escapeTxt(tweetObj.content.text)}</p>
-    <footer>${new Date(tweetObj.created_at)}</footer>
+        <footer>${moment(tweetObj.created_at).startOf('minute').fromNow() }</footer>
+
   </article>
   `;
   return htmlTweet;
