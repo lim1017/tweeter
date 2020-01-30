@@ -54,8 +54,12 @@ padding-right:10px;
 
 .text2long{
   opacity: 0;
+  position: relative;
+  left: -8em;
 }
 .text2longShow{
   opacity: 1;
+  position: relative;
+  left: -8em;
 }
 
