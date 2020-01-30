@@ -6,7 +6,7 @@
   background-color: #FFE192;  
   font-family: Bungee, sans-serif;
   color: #3455B3;
-
+  display:none;
 }
 
 .text-box{
@@ -58,4 +58,8 @@ padding-right:10px;
   
 }
 
+.foot{
+  display:flex;
+  justify-content: space-between;
+}
 

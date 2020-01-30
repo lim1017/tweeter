@@ -15,6 +15,8 @@ $(document).ready(function() {
       $(".counter").addClass('text2long')
     }else{
       $('.error-container').empty()
+      $(".counter").removeClass('text2long')
+
     }
 
     $(".counter").text(counter); // displays the counter in html

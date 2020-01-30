@@ -26,9 +26,7 @@ $(document).ready(function() {
 
 
     if($(this).serialize()==='text='){
-        $(".error-container").html(noTextOrTolongError(true, false));   //no text error is true,  to long error is false
-  
-      
+        $(".error-container").html(noTextOrTolongError(true, false));   //no text error is true,  to long error is false      
     } else if($(this).serialize().length>145){
       $(".error-container").html(noTextOrTolongError(false, true));   //no text error is true,  to long error is false
 
@@ -48,7 +46,7 @@ $(document).ready(function() {
     }  
 
 
-
+    
 
 
 
@@ -91,7 +89,7 @@ function createTweetElement(tweetObj) {
       <span class="handle"><strong>${tweetObj.user.handle}</strong></span>
     </div>
     <p>${escapeTxt(tweetObj.content.text)}</p>
-        <footer>${moment(tweetObj.created_at).startOf('minute').fromNow() }</footer>
+        <footer class='foot'><div>${moment(tweetObj.created_at).startOf('minute').fromNow() }</div> <div> 👍🏽 🚓 👎🏽</div></footer>
 
   </article>
   `;
