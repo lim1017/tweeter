@@ -32,6 +32,34 @@ body {
 }
 
 
+
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+
+.back2Top{
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  position: fixed;
+  bottom:55px;
+  right:25px;
+
+  display:none;
+
+}
+
+.back2Top:hover {
+  background-color: #DDF;
+  color: #000;
+  cursor: pointer;
+
+}
+
+.showButton{
+  
+  display:block;
+
+}

@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  $(".text-box").on('keydown', function(e) {
+  $(".text-box").on('input', function(e) {
     // console.log(e.key); 
     // console.log(this.value.length)
 

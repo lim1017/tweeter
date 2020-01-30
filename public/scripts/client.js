@@ -44,11 +44,27 @@ $(document).ready(function() {
 
   //toggle nav bar button
   $(".toggleTweet").on('click', function(e){
-
     $( ".new-tweet" ).slideToggle('slow');
-        
   })
 
+  //on scroll event trigger
+  $( window ).scroll(function() {
+    $(".back2Top").addClass("showButton");
+    $(".toggleTweet").addClass("removeTweetButton");
+    
+    
+    if($(window).scrollTop()===0){
+      $(".back2Top").removeClass("showButton");
+      $(".toggleTweet").removeClass("removeTweetButton");
+      $( ".new-tweet" ).slideDown();
+    }
+  });
+  
+
+  //button scroll to top
+  $(".back2Top").on('click', function(e){
+    event.preventDefault();
+    $("html, body").animate({ scrollTop: 0 }, "slow");  })
 
 });
 
