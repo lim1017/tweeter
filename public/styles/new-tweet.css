@@ -55,23 +55,7 @@ padding-right:10px;
 .text2long{
   color:red;
   padding-right:10px;
-  opacity: 0;
-  position: relative;
-  left: -8em;
+  
 }
 
-.notext{
-  opacity: 0;
-}
-
-.notextShow{
-  opacity: 1;
-}
-
-
-.text2longShow{
-  opacity: 1;
-  position: relative;
-  left: -8em;
-}
 

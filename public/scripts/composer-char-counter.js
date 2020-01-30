@@ -1,28 +1,24 @@
 $(document).ready(function() {
 
   $(".text-box").on('input', function(e) {
-    // console.log(e.key); 
-    // console.log(this.value.length)
-
+   
     let txtLength=this.value.length
     let counter=msgLength(txtLength)
 
+   if(counter<140){
+    $('.error-container').empty()
+   }
+
+
     if(counter < 0){
-      $('.counter').addClass('text2Long')
-      $('.text2long').addClass('text2longShow')
-
+      $(".error-container").html(noTextOrTolongError(false, true));
+      $(".counter").addClass('text2long')
     }else{
-      $('.counter').removeClass('text2Long')
-      $('.text2long').removeClass('text2longShow')
-
+      $('.error-container').empty()
     }
 
-
-    // document.getElementById('counter').innerHTML = counter;
-    $(".counter").text(counter);
-
-
-
+    $(".counter").text(counter); // displays the counter in html
+    
   });
 
   
@@ -34,9 +30,5 @@ const msgLength = function (txtLength){
   return 140-txtLength
 }
 
-
-// document.addEventListener("keypress", (event) => {
-//   console.log(event);
-// });
 
     

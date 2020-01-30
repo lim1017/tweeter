@@ -25,8 +25,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
 
     <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+    <script type="text/javascript" src="/scripts/client.js"></script>
 
     <!-- viewport -->
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
@@ -44,6 +45,8 @@
     </nav>
   
     <div class='wholePage'>
+
+      
     <header>
       <div>
           <img src="/images/profile-hex.png" width="200" height="200" alt="Computer Hope"> 
@@ -64,11 +67,17 @@
         <form action="/tweets" method="POST" class='submitBox'>
           <textarea class="text-box" name="text" placeholder="What are you humming about?"></textarea>
           <br>
-          <div class='bottom bar'>
+          <div class='bottombar'>
           <button type="submit" class="btn"><strong>Tweet !</strong></button>   
-          <span class='notext'>Enter a Tweet!</span>  
-          <span class='text2long'>Tweet Too Long!</span>       
-     
+          <!-- <span class='notext'>Enter a Tweet!</span>  
+          <span class='text2long'>Tweet Too Long!</span>        -->
+            
+          <div class='error-container'>
+
+
+          </div>
+
+
           <span class="counter">140</span>
          </div>
         </form>

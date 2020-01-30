@@ -24,9 +24,14 @@ $(document).ready(function() {
     
     e.preventDefault()
 
+
     if($(this).serialize()==='text='){
-      $('.notext').addClass('notextShow')
+        $(".error-container").html(noTextOrTolongError(true, false));   //no text error is true,  to long error is false
+  
+      
     } else if($(this).serialize().length>145){
+      $(".error-container").html(noTextOrTolongError(false, true));   //no text error is true,  to long error is false
+
       $('.text2long').addClass('text2longShow')
     }
     else{
@@ -40,8 +45,13 @@ $(document).ready(function() {
         $(".submitBox").trigger('reset');  //clears the msg box 
         loadtweets()
       })
-    }
-  
+    }  
+
+
+
+
+
+
   })
 
   //toggle nav bar button
@@ -50,10 +60,9 @@ $(document).ready(function() {
   })
 
   //on scroll event trigger
-  $( window ).scroll(function() {
+  $(window).scroll(function() {
     $(".back2Top").addClass("showButton");
     $(".toggleTweet").addClass("removeTweetButton");
-    
     
     if($(window).scrollTop()===0){
       $(".back2Top").removeClass("showButton");
@@ -61,12 +70,12 @@ $(document).ready(function() {
       $( ".new-tweet" ).slideDown();
     }
   });
-  
 
   //button scroll to top
   $(".back2Top").on('click', function(e){
     event.preventDefault();
     $("html, body").animate({ scrollTop: 0 }, "slow");  })
+
 
 });
 
@@ -108,18 +117,22 @@ function loadtweets(){
     
 }
 
-function convertDate(longDate) {
-  // new Date(longDate.getTime())
-  const datetime = new Date(0);
-  datetime.setUTCSeconds(longDate.risetime);
-
-  console.log(datetime);
-
-  return datetime;
-}
 
 const escapeTxt =  function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
+}
+
+
+function noTextOrTolongError(noText, toLong){
+let html;
+
+  if(noText){
+    html=`<span class='notext'>Enter a Tweet!</span>`
+  } else if(toLong){
+    html=`<span class='text2long'>Tweet Too Long!</span>`
+  }
+
+  return html
 }
