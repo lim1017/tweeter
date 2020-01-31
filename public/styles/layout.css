@@ -71,8 +71,6 @@ body {
 
 @media only screen and (min-width: 1024px) {
 
-  
-
 
   .wholePage{
     display:flex;
@@ -81,9 +79,17 @@ body {
   }
 
   .newTweetPostedTweet{
-    margin-top: 100px;
+    margin-top: 150px;
     height:100vh;
   }
+
+}
+
+@media only screen and (min-width: 1224px) {
+
+  .wholePage {
+    padding-left: 50px;
+    padding-right: 25px;
 
 }
 

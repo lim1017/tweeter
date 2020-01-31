@@ -21,19 +21,23 @@ $(document).ready(function() {
 
   //when click on submit box
   $(".submitBox").on('submit', function(e){
-    
     e.preventDefault()
+
+
+
+    $(".text-box").css('height', '30px')
+
+
 
 
     if($(this).serialize()==='text='){
         $(".error-container").html(noTextOrTolongError(true, false));   //no text error is true,  to long error is false      
-    } else if($(this).serialize().length>145){
+    } else if($(this).text.length>145){
       $(".error-container").html(noTextOrTolongError(false, true));   //no text error is true,  to long error is false
 
-      $('.text2long').addClass('text2longShow')
+      $('.text2long').addClass('text2Red')
     }
     else{
-      $('.notext').removeClass('notextShow')
       $.ajax({
         url:`/tweets`,
         type: 'POST',
@@ -41,20 +45,19 @@ $(document).ready(function() {
       })
       .then(response => {
         $(".submitBox").trigger('reset');  //clears the msg box 
-        loadtweets()
+        loadtweets();
+        $(".counter").text(140)
       })
     }  
-
-
-    
-
-
 
   })
 
   //toggle nav bar button
   $(".toggleTweet").on('click', function(e){
     $( ".new-tweet" ).slideToggle('slow');
+
+    $(".text-box").focus()
+
   })
 
   //on scroll event trigger
