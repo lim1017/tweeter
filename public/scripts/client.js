@@ -23,7 +23,6 @@ $(document).ready(function() {
 
     $(".text-box").css("height", "30px");
 
-
     if ($(".text-box").val() === "") {
       $(".error-container").html(noTextOrTolongError(true, false)); //no text error is true,  to long error is false
     } else if ($(".text-box").val().length > 140) {
@@ -38,7 +37,7 @@ $(document).ready(function() {
       }).then(response => {
         $(".submitBox").trigger("reset"); //clears the msg box
         loadtweets();
-        $(".counter").text(140);  //sets counter to 140 after submit
+        $(".counter").text(140); //sets counter to 140 after submit
       });
     }
   });
@@ -68,7 +67,6 @@ $(document).ready(function() {
     $("html, body").animate({ scrollTop: 0 }, "slow");
   });
 });
-
 
 function createTweetElement(tweetObj) {
   const htmlTweet = `
@@ -111,7 +109,8 @@ const escapeTxt = function(str) {
   return div.innerHTML;
 };
 
-function noTextOrTolongError(noText, toLong) {    //only one can be true, other will be false.
+function noTextOrTolongError(noText, toLong) {
+  //only one can be true, other will be false.
   let html;
 
   if (noText) {
