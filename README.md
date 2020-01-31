@@ -7,7 +7,8 @@ This repository is the starter code for the project: Students will fork and clon
 ## Final Product
 
 !["Desktop View 1"](https://github.com/lim1017/tweeter/blob/master/docs/DesktopView1.png?raw=true)
-
+!["Desktop View 2"](https://github.com/lim1017/tweeter/blob/master/docs/DesktopView2.png?raw=true)
+!["Mobile View"](https://github.com/lim1017/tweeter/blob/master/docs/MobileView.png?raw=true)
 
 
 ## Getting Started
