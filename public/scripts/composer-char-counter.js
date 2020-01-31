@@ -2,16 +2,16 @@ $(document).ready(function() {
 
   $(".text-box").on('input', function(e) {
 
-    console.log(this.style.height)
 
 
     //shrink and grow the text box
-    this.style.height= 5+ 'px'
+    this.style.height= 30+ 'px'
     this.style.height=this.scrollHeight + 'px'
    
     let txtLength=this.value.length
     let counter=msgLength(txtLength)
 
+    //logic for the counter
    if(counter<140){
     $('.error-container').empty()
    }
